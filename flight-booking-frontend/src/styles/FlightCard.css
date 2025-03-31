@@ -1,0 +1,69 @@
+.flight-card {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flight-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flight-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flight-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.flight-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.flight-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.duration {
+    text-align: center;
+}
+
+.price-booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flight-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.book-now {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book-now:hover {
+    background-color: #218838;
+}
