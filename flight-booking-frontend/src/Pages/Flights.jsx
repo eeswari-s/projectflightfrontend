@@ -39,7 +39,9 @@ const Flights = () => {
       <SearchBar onSearch={handleSearch} />
       <div className="flights-list">
         {currentFlights.length > 0 ? (
-          currentFlights.map((flight) => <FlightCard key={flight._id} flight={flight} />)
+          currentFlights.map((flight) => (
+            <FlightCard key={flight._id} flight={flight} />
+          ))
         ) : (
           <p>No flights found.</p>
         )}

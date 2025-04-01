@@ -6,7 +6,7 @@ const FlightCard = ({ flight }) => {
     const navigate = useNavigate();
 
     const handleBooking = () => {
-        navigate("/booking");
+        navigate("/booking", { state: { flight } });  // Pass flight details
     };
 
     return (
