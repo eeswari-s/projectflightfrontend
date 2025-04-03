@@ -1,57 +1,50 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
-import SearchBar from "../Components/SearchBar";
-import FlightCard from "../Components/FlightCard";
-import Pagination from "../Components/Pagination";
-import "../styles/Flights.css";
 
 const Flights = () => {
+  const location = useLocation();
   const [flights, setFlights] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [flightsPerPage] = useState(10);
-  const [filteredFlights, setFilteredFlights] = useState([]);
+  
+  // Extract search parameters
+  const searchParams = new URLSearchParams(location.search);
+  const departureFrom = searchParams.get("departureFrom");
+  const goingTo = searchParams.get("goingTo");
+  const date = searchParams.get("date");
 
   useEffect(() => {
-    const fetchFlights = async () => {
-      try {
-        const response = await axios.get("http://localhost:3000/api/flights");
-        setFlights(response.data);
-        setFilteredFlights(response.data);
-      } catch (error) {
-        console.error("Error fetching flights:", error);
-      }
-    };
-    fetchFlights();
-  }, []);
-
-  const handleSearch = (searchResults) => {
-    setFilteredFlights(searchResults);
-    setCurrentPage(1);
-  };
-
-  // Pagination logic
-  const indexOfLastFlight = currentPage * flightsPerPage;
-  const indexOfFirstFlight = indexOfLastFlight - flightsPerPage;
-  const currentFlights = filteredFlights.slice(indexOfFirstFlight, indexOfLastFlight);
+    if (departureFrom && goingTo && date) {
+      axios
+        .get(
+          `http://localhost:3000/api/flights?departureFrom=${departureFrom}&goingTo=${goingTo}&date=${date}`
+        )
+        .then((response) => {
+          setFlights(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching flights:", error);
+        });
+    }
+  }, [departureFrom, goingTo, date]);
 
   return (
-    <div className="flights-container">
-      <SearchBar onSearch={handleSearch} />
-      <div className="flights-list">
-        {currentFlights.length > 0 ? (
-          currentFlights.map((flight) => (
-            <FlightCard key={flight._id} flight={flight} />
-          ))
-        ) : (
-          <p>No flights found.</p>
-        )}
-      </div>
-      <Pagination
-        totalFlights={filteredFlights.length}
-        flightsPerPage={flightsPerPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+    <div className="p-6">
+      <h2 className="text-2xl font-bold text-center">Available Flights</h2>
+      {flights.length > 0 ? (
+        <div className="mt-4">
+          {flights.map((flight) => (
+            <div key={flight._id} className="bg-gray-100 p-4 my-2 rounded shadow-md">
+              <h3 className="text-lg font-semibold">{flight.flightName}</h3>
+              <p>{flight.departureFrom} ➝ {flight.goingTo}</p>
+              <p>Departure: {flight.departureTime}, Arrival: {flight.arrivalTime}</p>
+              <p>Duration: {flight.duration}</p>
+              <p className="font-bold">Price: ₹{flight.price}</p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-center text-red-500 mt-4">No flights found!</p>
+      )}
     </div>
   );
 };

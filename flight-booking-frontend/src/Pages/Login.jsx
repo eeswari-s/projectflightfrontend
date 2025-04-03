@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Login = () => {
+const Login = ({ setIsAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -18,12 +18,12 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:3000/api/auth/login", formData);
-      console.log("Response:", response.data); // 👉 API response check panna
+      console.log("Response:", response.data);
 
-      // ✅ Correct condition for checking login success
       if (response.data.message === "User logged in successfully (No Token)") {
         alert("Login successful!");
-        navigate("/flights"); // ✅ Redirect flights page
+        setIsAuthenticated(true); // ✅ Set authentication state
+        navigate("/navbar"); // ✅ Redirect to Navbar page after successful login
       } else {
         alert("Invalid email or password!");
       }

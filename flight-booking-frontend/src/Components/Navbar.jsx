@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import SearchFlights from "./SearchFlights.jsx";
 
 const Navbar = () => {
   return (
+    <>
     <nav className="flex justify-between items-center p-4 bg-blue-500 text-white">
       <div className="flex items-center">
         <img src="/assets/flight.png" alt="Flight" className="h-8 mr-2" />
@@ -9,13 +10,11 @@ const Navbar = () => {
       </div>
       <div>
         <button className="mr-4">Special</button>
-        <Link to="/login">
-          <button className="bg-white text-blue-500 px-4 py-2 rounded hover:bg-green-500">
-            Login/Signup
-          </button>
-        </Link>
+   
       </div>
     </nav>
+    <SearchFlights />
+    </>
   );
 };
 
