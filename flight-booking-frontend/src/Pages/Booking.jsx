@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import SeatSelection from "../Components/SeatSelection";
-
+import { createCheckoutSession } from "../api/payAPI.js";
 
 const BookingPage = () => {
   const location = useLocation();
@@ -70,7 +70,7 @@ const BookingPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-6 px-4">
-      <div className="max-w-screen-xl mx-auto bg-white rounded-lg shadow-lg p-6 space-y-6 grid grid-cols-1 md:grid-cols-2 gap-6 gap-x-12">
+      <div className="max-w-screen-xl mx-auto bg-white rounded-lg shadow-lg p-6 space-y-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Column: Flight Details and Booking Form */}
         <div className="space-y-6">
           <div className="text-center">
