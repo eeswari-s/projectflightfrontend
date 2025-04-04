@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import SeatSelection from "../Components/SeatSelection";
-import { createCheckoutSession } from "../api/payApi.js";
+
 
 const BookingPage = () => {
   const location = useLocation();
