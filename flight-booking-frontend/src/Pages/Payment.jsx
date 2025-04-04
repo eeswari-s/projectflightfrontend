@@ -21,7 +21,7 @@ const PaymentPage = () => {
             console.log('flightId:', flightId);
             console.log('bookingId:', bookingId);
 
-            const response = await axios.post('http://localhost:3000/api/create-checkout-session', {
+            const response = await axios.post('https://projectflightbackend.onrender.com/api/create-checkout-session', {
                 flightId: flightId,
                 bookingId: bookingId,
             });

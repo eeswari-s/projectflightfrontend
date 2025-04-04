@@ -19,7 +19,7 @@ const PaymentPage = () => {
       setLoading(true);
       
       // Send data to backend to create a checkout session
-      const response = await axios.post('http://localhost:3000/api/create-checkout-session', {
+      const response = await axios.post('https://projectflightbackend.onrender.com/api/create-checkout-session', {
         flightId: flightId,
         bookingId: bookingId,
       });

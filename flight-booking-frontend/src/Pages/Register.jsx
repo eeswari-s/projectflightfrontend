@@ -24,7 +24,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        "https://projectflightbackend.onrender.com/api/auth/register",
         formData,
         { headers: { "Content-Type": "application/json" } } // 🔹 Ensure correct data format
       );
@@ -40,8 +40,9 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded shadow-md w-96">
+    <div className="flex justify-center items-center h-screen bg-cover bg-center"
+  style={{ backgroundImage: "url('/assets/logingairport.jpeg')" }}>
+     <div className="bg-white/20 backdrop-blur-md p-6 rounded-lg shadow-[0px_20px_50px_rgba(0,0,0,0.6)] w-96">
         <h2 className="text-2xl mb-4 text-center">Register</h2>
         <form onSubmit={handleSubmit} className="flex flex-col">
           <input
@@ -50,7 +51,8 @@ const Register = () => {
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-2 mb-2 border rounded-md"
+           className="w-full p-3 mb-3 border border-gray-300 rounded-lg shadow-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 bg-white/10 backdrop-blur-md"
+
             required
           />
           <input
@@ -59,7 +61,7 @@ const Register = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 mb-2 border rounded-md"
+           className="w-full p-3 mb-3 border border-gray-300 rounded-lg shadow-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 bg-white/10 backdrop-blur-md"
             required
           />
           <input
@@ -68,12 +70,14 @@ const Register = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full p-2 mb-2 border rounded-md"
+           className="w-full p-3 mb-3 border border-gray-300 rounded-lg shadow-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300 bg-white/10 backdrop-blur-md"
+
             required
           />
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white p-2 rounded hover:bg-green-500 transition"
+           className="w-full bg-blue-500 text-white p-3 rounded-lg shadow-lg transition-all duration-500 ease-in-out transform hover:bg-green-500 hover:scale-110 hover:-translate-y-1 hover:shadow-2xl active:scale-95"
+
           >
             Submit
           </button>

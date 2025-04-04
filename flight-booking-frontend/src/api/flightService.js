@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/flights";
+const API_URL = "https://projectflightbackend.onrender.com/api/flights";
 
 export const fetchFlights = async () => {
   const response = await axios.get(API_URL);

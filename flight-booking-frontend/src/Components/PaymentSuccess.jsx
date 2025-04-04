@@ -1,22 +1,35 @@
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const Success = () => {
+const PaymentSuccess = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const bookingDetails = location.state; // Get passed booking details
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-green-100">
-      <div className="bg-white p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-semibold text-green-600 mb-4">Payment Successful! 🎉</h2>
-        <p>Your flight booking is confirmed.</p>
+    <div className="flex flex-col items-center justify-center h-screen bg-green-100 p-6">
+      <div className="bg-white shadow-lg p-8 rounded-lg text-center">
+        <h2 className="text-3xl font-bold text-green-600">Payment Successful 🎉</h2>
+        <p className="mt-2 text-gray-600">Thank you for booking your flight!</p>
+
+        {bookingDetails && (
+          <div className="mt-4 text-left">
+            <p><strong>Passenger Name:</strong> {bookingDetails.name}</p>
+            <p><strong>Flight Number:</strong> {bookingDetails.flightNumber}</p>
+            <p><strong>Seat Number:</strong> {bookingDetails.seat}</p>
+            <p><strong>Total Paid:</strong> ₹{bookingDetails.totalFare}</p>
+          </div>
+        )}
+
         <button
-          onClick={() => navigate("/flights")}
-          className="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-600"
+          onClick={() => navigate("/search-flights")}
+          className="mt-6 bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
         >
-          Go to Flight Search
+          Go to Dashboard
         </button>
       </div>
     </div>
   );
 };
 
-export default Success;
+export default PaymentSuccess;

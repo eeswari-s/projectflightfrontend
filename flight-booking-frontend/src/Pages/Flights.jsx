@@ -16,7 +16,7 @@ const Flights = () => {
     if (departureFrom && goingTo && date) {
       axios
         .get(
-          `http://localhost:3000/api/flights?departureFrom=${departureFrom}&goingTo=${goingTo}&date=${date}`
+          `https://projectflightbackend.onrender.com/api/flights?departureFrom=${departureFrom}&goingTo=${goingTo}&date=${date}`
         )
         .then((response) => {
           setFlights(response.data);

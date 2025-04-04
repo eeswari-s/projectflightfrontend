@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SearchFlights from "./SearchFlights.jsx";
 
 const Navbar = () => {
@@ -9,8 +10,26 @@ const Navbar = () => {
         <span className="italic text-lg">Suki World</span>
       </div>
       <div>
-        <button className="mr-4">Special</button>
-   
+      <Link to="/Special">
+            <button className="mr-4 px-4 py-2 bg-white text-blue-500 rounded hover:bg-gray-200 transition">
+              cab
+            </button>
+          </Link>
+        <Link to="/hotels">
+            <button className="mr-4 px-4 py-2 bg-white text-blue-500 rounded hover:bg-gray-200 transition">
+              Hotels
+            </button>
+          </Link>
+          <Link to="/tourist">
+            <button className="mr-4 px-4 py-2 bg-white text-blue-500 rounded hover:bg-gray-200 transition">
+              tourist places
+            </button>
+          </Link>
+          <Link to="/ContactUs">
+            <button className="mr-4 px-4 py-2 bg-white text-blue-500 rounded hover:bg-gray-200 transition">
+              contact us
+            </button>
+          </Link>
       </div>
     </nav>
     <SearchFlights />

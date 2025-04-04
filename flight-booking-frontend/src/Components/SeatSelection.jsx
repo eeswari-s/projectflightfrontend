@@ -7,7 +7,7 @@ const SeatSelection = ({ selectedSeat, setSelectedSeat }) => {
   useEffect(() => {
     const fetchBookedSeats = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/booking/booked-seats");
+        const response = await axios.get("https://projectflightbackend.onrender.com/api/booking/booked-seats");
         const bookedSeats = response.data;
         const updatedSeats = [...seats];
 

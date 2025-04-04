@@ -17,7 +17,7 @@ const PaymentForm = ({ bookingDetails }) => {
     if (!stripe || !elements) return;
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:3000/api/booking/book", bookingDetails);
+      const { data } = await axios.post("https://projectflightbackend.onrender.com/api/booking/book", bookingDetails);
       const clientSecret = data.clientSecret;
       const { paymentIntent, error } = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -28,7 +28,7 @@ const PaymentForm = ({ bookingDetails }) => {
       if (error) {
         alert("Payment Failed");
       } else {
-        await axios.post("http://localhost:3000/api/payment-success", { paymentIntent });
+        await axios.post("https://projectflightbackend.onrender.com/api/payment-success", { paymentIntent });
         navigate("/success");
       }
     } catch (error) {

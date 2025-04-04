@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
 const SearchFlights = () => {
   const [departureFrom, setDepartureFrom] = useState("");
   const [goingTo, setGoingTo] = useState("");
@@ -15,7 +16,7 @@ const SearchFlights = () => {
       return;
     }
     try {
-      const response = await axios.get(`http://localhost:3000/api/flights/search?departureFrom=${departureFrom}&goingTo=${goingTo}&departureDate=${departureDate}`);
+      const response = await axios.get(`https://projectflightbackend.onrender.com/api/flights/search?departureFrom=${departureFrom}&goingTo=${goingTo}&departureDate=${departureDate}`);
       
       setFlights(response.data);
     } catch (error) {
@@ -37,7 +38,8 @@ const SearchFlights = () => {
             placeholder="Enter city"
             value={departureFrom}
             onChange={(e) => setDepartureFrom(e.target.value)}
-            className="p-2 w-full md:w-auto border rounded text-black"
+            className="p-3 w-full md:w-auto border border-gray-300 rounded-lg text-black bg-white shadow-md hover:shadow-lg transition-all duration-300"
+
           />
         </div>
         <div>
@@ -47,7 +49,8 @@ const SearchFlights = () => {
             placeholder="Enter destination"
             value={goingTo}
             onChange={(e) => setGoingTo(e.target.value)}
-            className="p-2 w-full md:w-auto border rounded text-black"
+            className="p-3 w-full md:w-auto border border-gray-300 rounded-lg text-black bg-white shadow-sm focus:ring-2 focus:ring-blue-400 transition-all duration-300"
+
           />
         </div>
         <div>
@@ -56,48 +59,56 @@ const SearchFlights = () => {
             type="date"
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
-            className="p-2 w-full md:w-auto border rounded text-black"
+            className="p-3 w-full md:w-auto border border-gray-300 rounded-lg text-black bg-white shadow-md focus:ring-2 focus:ring-blue-500 hover:border-blue-400 transition-all duration-300"
+
           />
         </div>
         <button
           onClick={handleSearch}
-          className="bg-blue-700 hover:bg-green-500 p-3 px-6 rounded text-white font-bold"
+          className="bg-blue-700 hover:bg-green-500 p-3 mt-6 px-6 rounded-lg text-white font-bold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+
         >
           Search
         </button>
       </div>
 
-      <div className="mt-6 space-y-4">
+      <div>
         {flights.map((flight) => (
-          <div key={flight._id} className="bg-white p-4 rounded-lg shadow-md text-black flex flex-col md:flex-row justify-between items-center">
-            <div className="w-full md:w-1/3 flex flex-col items-center">
-              <img src="/flight-logo.png" alt="Flight Logo" className="w-12 h-12" />
-              <p className="font-bold">{flight.flightName}</p>
+          <div key={flight._id} className="bg-white p-6 rounded-xl  text-gray-900 flex flex-col md:flex-row justify-between items-center border border-gray-300">
+            <div className="w-full md:w-1/4 flex flex-row items-center p-4 rounded-lg shadow-lg bg-white border border-gray-300"  >
+           <div className="">
+            <img src="/assets/flight-logo.png"alt="Flight Logo" className="w-50 h-30  rounded-full" />
+             </div>
+             <div>
+              <p className="font-bold text-2xl text-gray-800 tracking-wide">{flight.flightName}</p>
               <p className="text-sm">{flight.flightNumber}</p>
+              </div>
             </div>
 
-            <div className="w-full md:w-1/3 flex justify-between items-center">
+            <div className="w-full md:w-1/2 ml-8 flex flex-row items-center p-4 rounded-lg shadow-lg bg-white border border-gray-300"            >
               <div className="text-center">
-                <p className="text-lg font-semibold">{flight.departureFrom}</p>
+                <p className="text-xl font-bold text-gray-900 tracking-wide leading-relaxed" >{flight.departureFrom}</p>
                 <p className="text-sm">{flight.departureDate}</p>
                 <p className="text-sm">{flight.departureTime}</p>
               </div>
-
-              <div className="border-t border-gray-500 w-16 my-2"></div>
+                 <div className="flex flex-col">
+                <p className="text-sm text-center">Duration: {flight.duration}</p>
+              <div className="border-t border-gray-500 w-64 md:w-48 lg:w-64 xl:w-80 my-2" ></div>
+              <p className="text-sm text-center">Stops: {flight.stop}</p>
+              </div>
 
               <div className="text-center">
-                <p className="text-lg font-semibold">{flight.goingTo}</p>
+                <p className="text-lg font-semibold text-gray-900 tracking-wide md:text-xl lg:text-2xl">{flight.goingTo}</p>
                 <p className="text-sm">{flight.arrivalTime}</p>
               </div>
             </div>
 
             <div className="w-full md:w-1/3 text-center">
-              <p className="text-sm">Duration: {flight.duration}</p>
-              <p className="text-sm">Stops: {flight.stop}</p>
+             
+              
               <button
                 onClick={() => handleBookNow(flight)}
-                className="mt-2 bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded"
-              >
+                className="mt-2 bg-green-500 hover:bg-green-700 text-white py-2 px-6 rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 md:px-8 lg:px-10 lg:py-3" >
                 Book Now
               </button>
             </div>

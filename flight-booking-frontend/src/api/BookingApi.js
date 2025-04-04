@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/booking";
+const API_URL = "https://projectflightbackend.onrender.com/api/booking";
 
 export const bookSeat = async (userId, flightId, seatNumber) => {
   return axios.post(`${API_URL}/book-seat`, { userId, flightId, seatNumber });
