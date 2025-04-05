@@ -16,6 +16,7 @@ import Hotels from "./Components/Hotels"; // Import Hotels Component
 import Special from "./Components/Special.jsx";
 import Tourist from "./Components/Tourist";
 import ContactUs from "./Components/ContactUs";
+import CompareFlights from "./Components/CompareFlights";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -35,13 +36,12 @@ const App = () => {
           <Route path="/flights" element={<Flights />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/payment" element={<Payment />} />
-          
           <Route path="/payment-success" element={<PaymentSuccess />} />
           <Route path="/special" element={<Special />} />
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/tourist" element={<Tourist />} />
           <Route path="/contactus" element={<ContactUs />} />
-
+          <Route path="/compareFlights" element={<CompareFlights />} />
         </Routes>
         </div>
         <FlightFeatures />

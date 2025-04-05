@@ -14,7 +14,7 @@ const SeatSelection = ({ selectedSeat, setSelectedSeat }) => {
         bookedSeats.forEach((seatNumber) => {
           updatedSeats[seatNumber - 1] = "booked"; // Mark booked seats
         });
-
+        console.log("Booked seats:", bookedSeats);
         setSeats(updatedSeats);
       } catch (error) {
         console.error("Failed to fetch booked seats", error);
