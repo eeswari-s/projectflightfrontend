@@ -42,7 +42,7 @@ const Footer = () => {
           </a>
         </div>
         <hr></hr>
-        {/* Copyright */}
+       
         <div className="text-center mt-6">
           <p>© 2025 Flight Booking. All Rights Reserved.</p>
         </div>

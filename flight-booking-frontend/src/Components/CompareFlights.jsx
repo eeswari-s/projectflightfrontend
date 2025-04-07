@@ -46,7 +46,7 @@ const CompareFlights = () => {
     <div className="p-6">
       <h1 className="text-2xl font-bold text-center mb-6 text-indigo-700">Compare Flights - Suki vs Repo</h1>
 
-      {/* 💎 Stylish Search Box Section */}
+      
       <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6 items-center bg-indigo-50 p-4 rounded-xl shadow">
         <div className="relative w-full sm:w-64">
           <input
@@ -91,8 +91,7 @@ const CompareFlights = () => {
         return (
           <div
             key={idx}
-            className="bg-white rounded-xl shadow-lg p-4 mb-6 border border-indigo-200"
-          >
+            className="bg-white rounded-xl shadow-lg p-4 mb-6 border border-indigo-200">
             <table className="w-full text-center rounded-lg overflow-hidden">
               <thead className="bg-indigo-500 text-white">
                 <tr>

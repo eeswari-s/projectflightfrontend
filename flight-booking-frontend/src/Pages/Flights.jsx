@@ -6,7 +6,7 @@ const Flights = () => {
   const location = useLocation();
   const [flights, setFlights] = useState([]);
   
-  // Extract search parameters
+  
   const searchParams = new URLSearchParams(location.search);
   const departureFrom = searchParams.get("departureFrom");
   const goingTo = searchParams.get("goingTo");

@@ -7,7 +7,7 @@ const ContactUs = () => {
 
   return (
     <div className="p-6">
-      {/* Back Button */}
+    
       <button
         className="bg-blue-500 text-white px-4 py-2 rounded-md mb-4"
         onClick={() => navigate("navbar")}
@@ -52,7 +52,7 @@ const ContactUs = () => {
               <td className="border border-gray-400 px-4 py-2">0124 - 6999900</td>
             </tr>
             <tr>
-              <td className="border border-gray-400 px-4 py-2">Holidays</td>
+              <td className="border border-gray-400 px-4 py-2">cabbooking services</td>
               <td className="border border-gray-400 px-4 py-2">Monday - Saturday</td>
               <td className="border border-gray-400 px-4 py-2">10:00 - 19:00</td>
               <td className="border border-gray-400 px-4 py-2">Closed</td>

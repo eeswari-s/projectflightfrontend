@@ -1,4 +1,4 @@
-// utils/stripe.js
+
 let stripePromise;
 
 const getStripe = () => {

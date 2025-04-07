@@ -6,17 +6,17 @@ const Register = () => {
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
   const navigate = useNavigate();
 
-  // 🔹 Handle Input Change
+ 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // 🔹 Handle Form Submit
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data Sent:", formData); // 🔍 Debugging purpose
+    console.log("Form Data Sent:", formData); 
 
-    // 🔹 Basic Validation (Frontend)
+   
     if (!formData.name || !formData.email || !formData.password) {
       alert("All fields are required!");
       return;
@@ -26,12 +26,12 @@ const Register = () => {
       const response = await axios.post(
         "https://projectflightbackend.onrender.com/api/auth/register",
         formData,
-        { headers: { "Content-Type": "application/json" } } // 🔹 Ensure correct data format
+        { headers: { "Content-Type": "application/json" } } 
       );
 
       console.log("Response:", response.data);
       alert("Registration successful!");
-      navigate("/login"); // ✅ Redirect to Login page after successful registration
+      navigate("/login"); 
 
     } catch (error) {
       console.error("Error Response:", error.response?.data || error.message);

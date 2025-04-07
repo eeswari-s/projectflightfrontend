@@ -22,8 +22,8 @@ const Login = ({ setIsAuthenticated }) => {
 
       if (response.data.message === "User logged in successfully (No Token)") {
         alert("Login successful!");
-        setIsAuthenticated(true); // ✅ Set authentication state
-        navigate("/navbar"); // ✅ Redirect to Navbar page after successful login
+        setIsAuthenticated(true); 
+        navigate("/navbar"); 
       } else {
         alert("Invalid email or password!");
       }

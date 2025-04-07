@@ -14,7 +14,7 @@ const Layout = ({ isAuthenticated }) => {
   return (
     <div>
 
-      <Outlet /> {/* ✅ If logged in, this will render Flights */}
+      <Outlet />
     </div>
   );
 };

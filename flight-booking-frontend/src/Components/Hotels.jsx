@@ -7,12 +7,12 @@ const Tourist = () => {
     <div className="flex flex-col items-center justify-center min-h-screenbg-gradient-to-r from-blue-400 to-blue-600 p-6">
       <div className="bg-white p-6 rounded-lg shadow-2xl w-3/5  mb-8  flex flex-row items-center">
         
-        {/* Image Section */}
+       
         <div className="w-1/3">
           <img src="/assets/trichyhotel.jpeg" alt="Delhi" className="w-full h-auto rounded-lg" />
         </div>
 
-        {/* Text Section */}
+        
         <div className="w-2/3 px-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Discover Comfort & Service</h2>
           <p className="text-gray-600 text-sm">
@@ -28,7 +28,7 @@ const Tourist = () => {
             An unforgettable experience awaits at Courtyard Tiruchirappalli.
           </p>
           <h1 className="text-5xl font-bold text-green-500 animate-bounce">RS.8500</h1>
-          {/* Contact Button */}
+          
           <div className="mt-4">
             <button 
               onClick={() => setShowContact(!showContact)} 
@@ -37,7 +37,7 @@ const Tourist = () => {
               Contact
             </button>
 
-            {/* Contact Number (Shown on Click) */}
+           
             {showContact && (
               <p className="mt-2 text-gray-800 font-semibold">📞 +91 98765 43210</p>
               

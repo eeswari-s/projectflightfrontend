@@ -5,7 +5,7 @@ const PaymentPage = () => {
   const [loading, setLoading] = useState(false);
 
   const handlePayment = async () => {
-    // Retrieve flightId and bookingId from localStorage
+ 
     const flightId = localStorage.getItem('flightId');
     const bookingId = localStorage.getItem('bookingId');
 
@@ -18,7 +18,7 @@ const PaymentPage = () => {
     try {
       setLoading(true);
       
-      // Send data to backend to create a checkout session
+      
       const response = await axios.post('https://projectflightbackend.onrender.com/api/create-checkout-session', {
         flightId: flightId,
         bookingId: bookingId,
@@ -26,8 +26,8 @@ const PaymentPage = () => {
 
       const { sessionId } = response.data;
 
-      // Redirect to Stripe checkout page
-      const stripe = window.Stripe('VITE_STRIPE_PUBLIC_KEY');  // Replace with your actual Stripe public key
+      
+      const stripe = window.Stripe('VITE_STRIPE_PUBLIC_KEY');  
       const { error } = await stripe.redirectToCheckout({ sessionId });
 
       if (error) {

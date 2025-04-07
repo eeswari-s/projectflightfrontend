@@ -12,7 +12,7 @@ const SeatSelection = ({ selectedSeat, setSelectedSeat }) => {
         const updatedSeats = [...seats];
 
         bookedSeats.forEach((seatNumber) => {
-          updatedSeats[seatNumber - 1] = "booked"; // Mark booked seats
+          updatedSeats[seatNumber - 1] = "booked"; 
         });
         console.log("Booked seats:", bookedSeats);
         setSeats(updatedSeats);
@@ -25,7 +25,7 @@ const SeatSelection = ({ selectedSeat, setSelectedSeat }) => {
   }, []);
 
   const handleSeatClick = (index) => {
-    if (seats[index] === "booked") return; // Prevent selecting booked seats
+    if (seats[index] === "booked") return; 
 
     setSelectedSeat(index + 1);
   };

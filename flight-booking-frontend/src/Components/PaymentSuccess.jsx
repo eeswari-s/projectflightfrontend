@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 const PaymentSuccess = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const bookingDetails = location.state; // Get passed booking details
+  const bookingDetails = location.state; 
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-green-100 p-6">

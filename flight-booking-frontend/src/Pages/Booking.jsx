@@ -123,7 +123,7 @@ const BookingPage = () => {
           </div>
         </div>
 
-        {/* Right Column: Seat Selection, Price Details, and Buttons */}
+       
         <div className="space-y-6">
           <div>
             <h3 className="text-xl font-semibold text-green-500">Select a Seat</h3>
@@ -139,7 +139,7 @@ const BookingPage = () => {
             <p className="font-bold">Total You Pay: ₹{totalFare}</p>
           </div>
 
-          {/* Buttons */}
+         
           <div className="space-y-4 mt-6">
             <button
               onClick={handleBookNowClick}
