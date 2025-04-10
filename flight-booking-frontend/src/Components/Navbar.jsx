@@ -10,6 +10,11 @@ const Navbar = () => {
         <span className="italic text-lg">Suki World</span>
       </div>
       <div>
+      <Link to="/Navbar">
+            <button className="mr-4 px-4 py-2 bg-white text-blue-500 rounded hover:bg-gray-200 transition">
+              Home
+            </button>
+          </Link>
       <Link to="/Special">
             <button className="mr-4 px-4 py-2 bg-white text-blue-500 rounded hover:bg-gray-200 transition">
               cab
@@ -35,6 +40,7 @@ const Navbar = () => {
               Compare price
             </button>
           </Link>
+         
       </div>
     </nav>
     <SearchFlights />

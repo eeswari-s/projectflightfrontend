@@ -3,7 +3,7 @@ const FlightServicePlaces = () => {
       "Chennai", "Mumbai", "Bangalore", "New Delhi", "Madurai",
       "Trichy", "Pondicherry", "Hyderabad", "Visakhapatnam", "Agra",
       "Lucknow", "Kolkata", "Pune", "Jaipur", "Kochi",
-      "Cuddapah", "Salem", "Coimbatore", "Varanasi"
+      , "Salem", "Coimbatore"
     ];
   
     return (

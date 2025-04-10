@@ -1,6 +1,8 @@
-
+import Navbar from "./Navbar";
 const Special = () => {
     return (
+      <>
+         <Navbar/>
       <div
       className="grid grid-cols-4 grid-rows-2 gap-4 min-h-screen bg-cover bg-center p-4"
       style={{ backgroundImage: "url('/assets/cabcar.jpg')" }}
@@ -96,6 +98,8 @@ const Special = () => {
     
    
     </div>
+ 
+    </>
     );
   };
   

@@ -1,9 +1,11 @@
 import { useState } from "react";
-
+import Navbar from "./Navbar";
 const Tourist = () => {
   const [showContact, setShowContact] = useState(false);
 
   return (
+    <>
+     <Navbar/>
     <div className="flex flex-col items-center justify-center min-h-screenbg-gradient-to-r from-blue-400 to-blue-600 p-6">
       <div className="bg-white p-6 rounded-lg shadow-2xl w-3/5  mb-8  flex flex-row items-center">
         
@@ -218,6 +220,7 @@ const Tourist = () => {
 
       </div>
     </div>
+    </>
   );
 };
 
