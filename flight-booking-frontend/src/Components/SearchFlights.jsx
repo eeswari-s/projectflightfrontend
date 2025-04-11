@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "../Components/Navbar";
+
+
 
 
 
@@ -39,7 +41,7 @@ const SearchFlights = () => {
 
   return (
     <>
-    <Navbar />
+   <Navbar/>
     <div className="w-full p-6 bg-gradient-to-r from-violet-500 via-pink-500 to-blue-500 text-white shadow-lg">
       <div className="flex flex-col md:flex-row justify-center items-center gap-4">
         <div>

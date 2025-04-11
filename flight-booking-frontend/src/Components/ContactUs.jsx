@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
+
 const ContactUs = () => {
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
 
   return (
     <>
-    <Navbar />
+  <Navbar />
     <div className="p-6">
     
       <button

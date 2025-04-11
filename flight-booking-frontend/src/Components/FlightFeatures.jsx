@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+
 const FlightFeatures = () => {
     const features = [
       {
@@ -20,7 +20,7 @@ const FlightFeatures = () => {
   
     return (
       <>
-      <Navbar/>
+     
       <section className="bg-sky-100 py-10">
         <div className="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-3 text-center">
           {features.map((feature, idx) => (

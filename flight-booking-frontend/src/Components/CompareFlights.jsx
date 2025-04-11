@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 
+
 const CompareFlights = () => {
   const [flights, setFlights] = useState([]);
   const [searchFrom, setSearchFrom] = useState("");
@@ -51,7 +52,7 @@ const CompareFlights = () => {
 
   return (
     <>
-      <Navbar />
+     <Navbar />
       <div className="p-6">
         <h1 className="text-2xl font-bold text-center mb-6 text-indigo-700">
           Compare Flights - Suki vs Repo
@@ -113,6 +114,7 @@ const CompareFlights = () => {
           }
 
           return (
+            
             <div
               key={idx}
               className="bg-white rounded-xl shadow-lg p-4 mb-6 border border-indigo-200"

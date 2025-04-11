@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
-import Navbar from "./Components/Navbar";
+
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import SearchFlights from "./Components/SearchFlights";
@@ -12,7 +12,7 @@ import Footer from "./Components/Footer.jsx";
 import FeatureSuccess from "./Components/FeatureSuccess";
 import FlightServicePlaces from "./Components/FlightServicePlaces";
 import FlightFeatures from "./Components/FlightFeatures.jsx";
-import Hotels from "./Components/Hotels"; // Import Hotels Component
+import Hotels from "./Components/Hotels"; 
 import Special from "./Components/Special.jsx";
 import Tourist from "./Components/Tourist";
 import ContactUs from "./Components/ContactUs";
@@ -25,7 +25,7 @@ const App = () => {
 
       <Router>
       
-        {isAuthenticated && <Navbar />}
+        {isAuthenticated && <search-flights />}
 <div>
         <Routes>
          

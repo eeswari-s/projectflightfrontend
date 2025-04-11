@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+
 const Tourist = () => {
     
     const touristPlaces = [
@@ -12,7 +13,7 @@ const Tourist = () => {
   
     return (
       <>
-      <Navbar/>
+     <Navbar/>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-400 to-blue-600 p-6">
         <h2 className="text-3xl font-bold text-white mb-6">Top Tourist Destinations</h2>
         

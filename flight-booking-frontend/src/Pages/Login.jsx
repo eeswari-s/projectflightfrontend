@@ -23,7 +23,7 @@ const Login = ({ setIsAuthenticated }) => {
       if (response.data.message === "User logged in successfully (No Token)") {
         alert("Login successful!");
         setIsAuthenticated(true); 
-        navigate("/navbar"); 
+        navigate("/search-flights"); 
       } else {
         alert("Invalid email or password!");
       }
