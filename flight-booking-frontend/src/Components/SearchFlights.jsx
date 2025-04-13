@@ -9,7 +9,7 @@ import Navbar from "../Components/Navbar";
 
 const cityOptions = [
   "chennai", "Mumbai", "new delhi", "madurai", "trichy", "pondichery",
-  "hydrabad", "Visakhapatnam", "agra", "lucknow", "kolkatta", "pune",
+  "hydrabad", "Visakhapatnam", "agra", "kolkatta", "pune",
   "jaipure", "kochin", "salem", "coibature"
 ];
 
